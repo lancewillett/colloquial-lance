@@ -161,7 +161,11 @@ div[type=system] span.time
 .effect[bgcolor-number='0'] {}
 .effect[bgcolor-number='1'] {}
 .effect[bgcolor-number='2'] {}
-.effect[bgcolor-number='3'] {}
+.effect[bgcolor-number='3'] {
+  background-color: #fff;
+  border-bottom: solid 1px #fff;
+  color: #000;
+}
 .effect[bgcolor-number='4'] {}
 .effect[bgcolor-number='5'] {}
 .effect[bgcolor-number='6'] {}
