@@ -1,5 +1,9 @@
 # Colloquial-Lance
 
-This is a theme for LimeChat: http://limechat.net/mac/ based on http://julianstahnke.com/read/a_theme_for_limechat_colloquial/ by Julian Stahnke.
+A theme for [LimeChat](https://apps.apple.com/app/limechat/id414030210) based on [Colloquial](http://julianstahnke.com/read/a_theme_for_limechat_colloquial/) by Julian Stahnke.
 
-LimeChat allows you to create your own themes. You can install them by putting the CSS and YAML files in ~/Library/Application Support/LimeChat/Themes.
+Install by copying the CSS and YAML files to `~/Library/Application Support/net.limechat.LimeChat-AppStore/Themes/`.
+
+## Also available: Solarized themes
+
+Check out [Solarized for LimeChat](https://github.com/lancewillett/solarized-limechat) — dark and light themes using Ethan Schoonover's Solarized palette.
