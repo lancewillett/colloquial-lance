@@ -4,8 +4,8 @@ A theme for [LimeChat](https://apps.apple.com/app/limechat/id414030210) based on
 
 Ships in two variants:
 
-- **Colloquial-Lance** — the original light theme.
-- **Colloquial-Lance-Dark** — a dark mirror of the light theme, keeping the same accent colors (orange senders, warm highlight wash) on a near-black background.
+- **Colloquial-Lance**: the original light theme.
+- **Colloquial-Lance-Dark**: a dark mirror of the light theme, keeping the same accent colors (orange senders, warm highlight wash) on a near-black background.
 
 Install by copying the CSS and YAML files to `~/Library/Application Support/net.limechat.LimeChat-AppStore/Themes/`, then pick the variant in LimeChat's preferences.
 
