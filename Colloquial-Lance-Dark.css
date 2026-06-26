@@ -1,0 +1,184 @@
+html {
+  font-family: 'Lucida Grande';
+  font-size: 12px;
+  background-color: #1e1e1e;
+  color: #e8e8e8;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 3px 7px 0 7px;
+}
+
+body { margin: 0; padding: 0; }
+
+/* the html tag has these classes and attributes too */
+body.normal {}
+body.console {}
+body[type=channel] {}
+body[type=talk] {}
+body[type=console] {}
+body[channelname=#limechat] {}
+
+hr { margin: 0.5em 2em; }
+a { color: #5a8bd6; }
+
+/* lines */
+.line {
+    margin: 1px -7px;
+    padding: 1px 33px 1px 7px;
+    border-bottom: solid 1px #1e1e1e;
+    line-height: 16px;
+}
+.line[alternate=even] {}
+.line[alternate=odd] {}
+.line[type=action] .sender:before {
+  content: "• ";
+  white-space: nowrap;
+}
+.line[highlight=true] {
+  background-color: #3a3320;
+  border-bottom: solid 1px #4a4226;
+}
+.line[nick=Trac-Bot-],
+.line[nick=trac-bot],
+.line[nick=CIA-62] {
+  opacity: .5;
+}
+
+
+.url { word-break: break-all; }
+.address { text-decoration: none; word-break: break-all; }
+.highlight { color: #e8e8e8; font-weight: normal; background: #3a3320; }
+.time {
+    color: #6b6b6b;
+    font-size: 10px;
+    float: right;
+    margin: 2px -26px 0 0;
+}
+.place { color: #6b6b6b; }
+
+.line[highlight=true] .time {
+    color: #999;
+}
+
+strong.highlight {
+    font-weight: bold;
+}
+
+/* nickname for text messages */
+.sender[type=myself] { color: #e8695b; font-weight: bold; }
+.sender[type=normal] { color: #F09722; font-weight: bold; }
+.sender[type=normal][colornumber='0'] {}
+.sender[type=normal][colornumber='1'] {}
+.sender[type=normal][colornumber='2'] {}
+.sender[type=normal][colornumber='3'] {}
+.sender[type=normal][colornumber='4'] {}
+.sender[type=normal][colornumber='5'] {}
+.sender[type=normal][colornumber='6'] {}
+.sender[type=normal][colornumber='7'] {}
+.sender[type=normal][colornumber='8'] {}
+.sender[type=normal][colornumber='9'] {}
+.sender[type=normal][colornumber='10'] {}
+.sender[type=normal][colornumber='11'] {}
+.sender[type=normal][colornumber='12'] {}
+.sender[type=normal][colornumber='13'] {}
+.sender[type=normal][colornumber='14'] {}
+.sender[type=normal][colornumber='15'] {}
+
+/* message body */
+.message[type=system] { color: #888; }
+.message[type=error] { color: #ff5c5c; font-weight: bold; }
+.message[type=reply] { color: #888; }
+.message[type=error_reply] { color: #888; }
+.message[type=dcc_send_send] { color: #888; }
+.message[type=dcc_send_receive] { color: #888; }
+.message[type=privmsg] {}
+.message[type=notice] { color: #888; }
+.message[type=action] { color: #e8e8e8; }
+.message[type=join] { color: #888; }
+.message[type=part] { color: #888; }
+.message[type=kick] { color: #888; }
+.message[type=quit] { color: #888; }
+.message[type=kill] { color: #888; }
+.message[type=nick] { color: #888; }
+.message[type=mode] { color: #888; }
+.message[type=topic] { color: #888; }
+.message[type=invite] { color: #888; }
+.message[type=wallops] { color: #888; }
+.message[type=debug_send] { color: #777; }
+.message[type=debug_receive] { color: #bbb; }
+
+/* -- Channel event -- */
+div.event {
+    text-align: center;
+    font-size: 11px;
+    line-height: 13px;
+    margin: 0 -7px;
+    padding: 1px 7px;
+}
+
+div.event .message {
+    color: #6b6b6b;
+}
+
+div.event span.time {
+  float: none;
+  margin: 0;
+  color: #6b6b6b;
+  font-size: 9px;
+}
+
+div.event a { color: #7b8db5; }
+
+/* -- System message -- */
+div[type=system]
+{
+  background-color: #2a2a2a;
+  border-bottom: solid 1px #333;
+}
+div[type=system] span.message,
+div[type=system] span.time
+{
+  color: #888;
+}
+
+/* mIRC color effects.
+   The standard mIRC palette is tuned for a light background, so its dark
+   entries (black, navy, maroon) are invisible on this theme. Remap every
+   foreground color to a dark-background-friendly equivalent that keeps the
+   recognizable hue while clearing contrast on #1e1e1e. */
+.effect[color-number='0'] { color: #e8e8e8; }  /* white */
+.effect[color-number='1'] { color: #c8c8c8; }  /* black -> light grey */
+.effect[color-number='2'] { color: #5a8bd6; }  /* blue (navy) -> lighter blue */
+.effect[color-number='3'] { color: #5fb950; }  /* green */
+.effect[color-number='4'] { color: #ff5c5c; }  /* red */
+.effect[color-number='5'] { color: #c98a5a; }  /* maroon -> warm tan */
+.effect[color-number='6'] { color: #c97ac9; }  /* purple */
+.effect[color-number='7'] { color: #f0a050; }  /* orange */
+.effect[color-number='8'] { color: #e3cf4a; }  /* yellow */
+.effect[color-number='9'] { color: #74cf6a; }  /* light green */
+.effect[color-number='10'] { color: #3fb6b6; } /* cyan */
+.effect[color-number='11'] { color: #5fd0d0; } /* light cyan */
+.effect[color-number='12'] { color: #6f96e6; } /* light blue */
+.effect[color-number='13'] { color: #e070e0; } /* pink */
+.effect[color-number='14'] { color: #9a9a9a; } /* grey */
+.effect[color-number='15'] { color: #c8c8c8; } /* light grey */
+.effect[bgcolor-number='0'] {}
+.effect[bgcolor-number='1'] {}
+.effect[bgcolor-number='2'] {}
+.effect[bgcolor-number='3'] {
+  background-color: #1e1e1e;
+  border-bottom: solid 1px #1e1e1e;
+  color: #e8e8e8;
+}
+.effect[bgcolor-number='4'] {}
+.effect[bgcolor-number='5'] {}
+.effect[bgcolor-number='6'] {}
+.effect[bgcolor-number='7'] {}
+.effect[bgcolor-number='8'] {}
+.effect[bgcolor-number='9'] {}
+.effect[bgcolor-number='10'] {}
+.effect[bgcolor-number='11'] {}
+.effect[bgcolor-number='12'] {}
+.effect[bgcolor-number='13'] {}
+.effect[bgcolor-number='14'] {}
+.effect[bgcolor-number='15'] {}
