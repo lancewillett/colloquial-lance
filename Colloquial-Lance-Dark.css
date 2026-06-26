@@ -141,23 +141,27 @@ div[type=system] span.time
   color: #888;
 }
 
-/* mIRC color effects */
-.effect[color-number='0'] {}
-.effect[color-number='1'] {}
-.effect[color-number='2'] {}
-.effect[color-number='3'] {}
-.effect[color-number='4'] {}
-.effect[color-number='5'] {}
-.effect[color-number='6'] {}
-.effect[color-number='7'] {}
-.effect[color-number='8'] {}
-.effect[color-number='9'] {}
-.effect[color-number='10'] {}
-.effect[color-number='11'] {}
-.effect[color-number='12'] {}
-.effect[color-number='13'] {}
-.effect[color-number='14'] {}
-.effect[color-number='15'] {}
+/* mIRC color effects.
+   The standard mIRC palette is tuned for a light background, so its dark
+   entries (black, navy, maroon) are invisible on this theme. Remap every
+   foreground color to a dark-background-friendly equivalent that keeps the
+   recognizable hue while clearing contrast on #1e1e1e. */
+.effect[color-number='0'] { color: #e8e8e8; }  /* white */
+.effect[color-number='1'] { color: #c8c8c8; }  /* black -> light grey */
+.effect[color-number='2'] { color: #5a8bd6; }  /* blue (navy) -> lighter blue */
+.effect[color-number='3'] { color: #5fb950; }  /* green */
+.effect[color-number='4'] { color: #ff5c5c; }  /* red */
+.effect[color-number='5'] { color: #c98a5a; }  /* maroon -> warm tan */
+.effect[color-number='6'] { color: #c97ac9; }  /* purple */
+.effect[color-number='7'] { color: #f0a050; }  /* orange */
+.effect[color-number='8'] { color: #e3cf4a; }  /* yellow */
+.effect[color-number='9'] { color: #74cf6a; }  /* light green */
+.effect[color-number='10'] { color: #3fb6b6; } /* cyan */
+.effect[color-number='11'] { color: #5fd0d0; } /* light cyan */
+.effect[color-number='12'] { color: #6f96e6; } /* light blue */
+.effect[color-number='13'] { color: #e070e0; } /* pink */
+.effect[color-number='14'] { color: #9a9a9a; } /* grey */
+.effect[color-number='15'] { color: #c8c8c8; } /* light grey */
 .effect[bgcolor-number='0'] {}
 .effect[bgcolor-number='1'] {}
 .effect[bgcolor-number='2'] {}
