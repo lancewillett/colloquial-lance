@@ -163,23 +163,15 @@ div[type=system] span.time
 .effect[color-number='13'] { color: #b3008f; } /* pink */
 .effect[color-number='14'] { color: #5f5f5f; } /* grey */
 .effect[color-number='15'] { color: #767676; } /* light grey */
-.effect[bgcolor-number='0'] {}
-.effect[bgcolor-number='1'] {}
-.effect[bgcolor-number='2'] {}
-.effect[bgcolor-number='3'] {
-  background-color: #fff;
-  border-bottom: solid 1px #fff;
-  color: #000;
+/* mIRC background colors.
+   Status bots pair a foreground color with a black background (bgcolor 1)
+   for labels like PROBLEM: and RECOVERY: — a convention aimed at dark
+   terminals. LimeChat's built-in stylesheet honors it, which paints a dark
+   chip into the middle of a light theme and fights the foreground colors
+   above. Swap it for a faint grey chip: the label still reads as a label,
+   and every foreground color above keeps ~4.5:1 against it. */
+.effect[bgcolor-number] {
+  background-color: #f4f4f4;
+  padding: 1px 3px;
+  border-radius: 2px;
 }
-.effect[bgcolor-number='4'] {}
-.effect[bgcolor-number='5'] {}
-.effect[bgcolor-number='6'] {}
-.effect[bgcolor-number='7'] {}
-.effect[bgcolor-number='8'] {}
-.effect[bgcolor-number='9'] {}
-.effect[bgcolor-number='10'] {}
-.effect[bgcolor-number='11'] {}
-.effect[bgcolor-number='12'] {}
-.effect[bgcolor-number='13'] {}
-.effect[bgcolor-number='14'] {}
-.effect[bgcolor-number='15'] {}
