@@ -141,40 +141,37 @@ div[type=system] span.time
   color: #999;
 }
 
-/* mIRC color effects */
-.effect[color-number='0'] {}
-.effect[color-number='1'] {}
-.effect[color-number='2'] {}
-.effect[color-number='3'] {}
-.effect[color-number='4'] {}
-.effect[color-number='5'] {}
-.effect[color-number='6'] {}
-.effect[color-number='7'] {}
-.effect[color-number='8'] {}
-.effect[color-number='9'] {}
-.effect[color-number='10'] {}
-.effect[color-number='11'] {}
-.effect[color-number='12'] {}
-.effect[color-number='13'] {}
-.effect[color-number='14'] {}
-.effect[color-number='15'] {}
-.effect[bgcolor-number='0'] {}
-.effect[bgcolor-number='1'] {}
-.effect[bgcolor-number='2'] {}
-.effect[bgcolor-number='3'] {
-  background-color: #fff;
-  border-bottom: solid 1px #fff;
-  color: #000;
+/* mIRC color effects.
+   The standard mIRC palette dates to a 16-color terminal, and its pale
+   entries (white, yellow, light green, light cyan) wash out on this theme's
+   white background — bot output like a8c-status WARN is barely legible.
+   Remap every foreground color to a light-background-friendly equivalent
+   that keeps the recognizable hue and clears 4.5:1 contrast on #fff. */
+.effect[color-number='0'] { color: #5a5a5a; }  /* white -> mid grey */
+.effect[color-number='1'] { color: #000000; }  /* black */
+.effect[color-number='2'] { color: #00007f; }  /* blue (navy) */
+.effect[color-number='3'] { color: #0a7a0a; }  /* green */
+.effect[color-number='4'] { color: #cc0000; }  /* red */
+.effect[color-number='5'] { color: #7f0000; }  /* maroon */
+.effect[color-number='6'] { color: #8f008f; }  /* purple */
+.effect[color-number='7'] { color: #b35c00; }  /* orange */
+.effect[color-number='8'] { color: #8a6d00; }  /* yellow -> dark gold */
+.effect[color-number='9'] { color: #237f23; }  /* light green */
+.effect[color-number='10'] { color: #00615f; } /* cyan */
+.effect[color-number='11'] { color: #00807f; } /* light cyan */
+.effect[color-number='12'] { color: #2244cc; } /* light blue */
+.effect[color-number='13'] { color: #b3008f; } /* pink */
+.effect[color-number='14'] { color: #5f5f5f; } /* grey */
+.effect[color-number='15'] { color: #767676; } /* light grey */
+/* mIRC background colors.
+   Status bots pair a foreground color with a black background (bgcolor 1)
+   for labels like PROBLEM: and RECOVERY: — a convention aimed at dark
+   terminals. LimeChat's built-in stylesheet honors it, which paints a dark
+   chip into the middle of a light theme and fights the foreground colors
+   above. Swap it for a faint grey chip: the label still reads as a label,
+   and every foreground color above keeps ~4.5:1 against it. */
+.effect[bgcolor-number] {
+  background-color: #f4f4f4;
+  padding: 1px 3px;
+  border-radius: 2px;
 }
-.effect[bgcolor-number='4'] {}
-.effect[bgcolor-number='5'] {}
-.effect[bgcolor-number='6'] {}
-.effect[bgcolor-number='7'] {}
-.effect[bgcolor-number='8'] {}
-.effect[bgcolor-number='9'] {}
-.effect[bgcolor-number='10'] {}
-.effect[bgcolor-number='11'] {}
-.effect[bgcolor-number='12'] {}
-.effect[bgcolor-number='13'] {}
-.effect[bgcolor-number='14'] {}
-.effect[bgcolor-number='15'] {}
