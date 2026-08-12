@@ -1,8 +1,8 @@
 html {
   font-family: 'Lucida Grande';
   font-size: 12px;
-  background-color: #fff;
-  color: #000;
+  background-color: #fcfcfc;
+  color: #1a1a1a;
   word-wrap: break-word;
   margin: 0;
   padding: 3px 7px 0 7px;
@@ -25,7 +25,7 @@ a { color: #144FAE; }
 .line {
     margin: 1px -7px;
     padding: 1px 33px 1px 7px;
-    border-bottom: solid 1px #fff;
+    border-bottom: solid 1px #fcfcfc;
     line-height: 16px;
 }
 .line[alternate=even] {}
@@ -47,7 +47,7 @@ a { color: #144FAE; }
 
 .url { word-break: break-all; }
 .address { text-decoration: none; word-break: break-all; }
-.highlight { color: #000; font-weight: normal; background: #FBFAE0; }
+.highlight { color: #1a1a1a; font-weight: normal; background: #FBFAE0; }
 .time { 
     color: #b3b3b3;
     font-size: 10px;
@@ -93,7 +93,7 @@ strong.highlight {
 .message[type=dcc_send_receive] { color: #999; }
 .message[type=privmsg] {}
 .message[type=notice] { color: #999; }
-.message[type=action] { color: #000; }
+.message[type=action] { color: #1a1a1a; }
 .message[type=join] { color: #999; }
 .message[type=part] { color: #999; }
 .message[type=kick] { color: #999; }
@@ -141,37 +141,68 @@ div[type=system] span.time
   color: #999;
 }
 
-/* mIRC color effects.
-   The standard mIRC palette dates to a 16-color terminal, and its pale
-   entries (white, yellow, light green, light cyan) wash out on this theme's
-   white background — bot output like a8c-status WARN is barely legible.
-   Remap every foreground color to a light-background-friendly equivalent
-   that keeps the recognizable hue and clears 4.5:1 contrast on #fff. */
-.effect[color-number='0'] { color: #5a5a5a; }  /* white -> mid grey */
-.effect[color-number='1'] { color: #000000; }  /* black */
-.effect[color-number='2'] { color: #00007f; }  /* blue (navy) */
-.effect[color-number='3'] { color: #0a7a0a; }  /* green */
-.effect[color-number='4'] { color: #cc0000; }  /* red */
-.effect[color-number='5'] { color: #7f0000; }  /* maroon */
-.effect[color-number='6'] { color: #8f008f; }  /* purple */
-.effect[color-number='7'] { color: #b35c00; }  /* orange */
-.effect[color-number='8'] { color: #8a6d00; }  /* yellow -> dark gold */
-.effect[color-number='9'] { color: #237f23; }  /* light green */
-.effect[color-number='10'] { color: #00615f; } /* cyan */
-.effect[color-number='11'] { color: #00807f; } /* light cyan */
-.effect[color-number='12'] { color: #2244cc; } /* light blue */
-.effect[color-number='13'] { color: #b3008f; } /* pink */
-.effect[color-number='14'] { color: #5f5f5f; } /* grey */
-.effect[color-number='15'] { color: #767676; } /* light grey */
-/* mIRC background colors.
-   Status bots pair a foreground color with a black background (bgcolor 1)
-   for labels like PROBLEM: and RECOVERY: — a convention aimed at dark
-   terminals. LimeChat's built-in stylesheet honors it, which paints a dark
-   chip into the middle of a light theme and fights the foreground colors
-   above. Swap it for a faint grey chip: the label still reads as a label,
-   and every foreground color above keeps ~4.5:1 against it. */
-.effect[bgcolor-number] {
-  background-color: #f4f4f4;
-  padding: 1px 3px;
-  border-radius: 2px;
+/* mIRC color effects, derived rather than picked by eye.
+
+   Each color keeps mIRC's hue angle in CIELAB and changes only lightness and
+   chroma. Chroma is capped at 58 — mIRC's primaries run near 100, which is
+   what makes them shout — and lightness is set per context. mIRC pairs a dark
+   and a light member of most hues, so the two members keep separate lightness
+   tiers; flattening them to one value made green and light green identical.
+   Yellow and orange sit a tier higher, since forcing them down turns them olive.
+
+   Solarized's lesson applied: hold the hue, move the brightness. */
+.effect[color-number='0'] { color: #969696; }  /* white */
+.effect[color-number='1'] { color: #303030; }  /* black */
+.effect[color-number='2'] { color: #6448a6; }  /* blue */
+.effect[color-number='3'] { color: #13680c; }  /* green */
+.effect[color-number='4'] { color: #cc583e; }  /* red */
+.effect[color-number='5'] { color: #a23220; }  /* maroon */
+.effect[color-number='6'] { color: #8e348c; }  /* purple */
+.effect[color-number='7'] { color: #b26319; }  /* orange */
+.effect[color-number='8'] { color: #91901b; }  /* yellow */
+.effect[color-number='9'] { color: #408c31; }  /* light green */
+.effect[color-number='10'] { color: #006464; } /* cyan */
+.effect[color-number='11'] { color: #048a8a; } /* light cyan */
+.effect[color-number='12'] { color: #8a6acd; } /* light blue */
+.effect[color-number='13'] { color: #b559b1; } /* pink */
+.effect[color-number='14'] { color: #777777; } /* grey */
+.effect[color-number='15'] { color: #868686; } /* light grey */
+.effect[bgcolor-number='0'] {}
+.effect[bgcolor-number='1'] {}
+.effect[bgcolor-number='2'] {}
+.effect[bgcolor-number='3'] {
+  background-color: #fcfcfc;
+  border-bottom: solid 1px #fcfcfc;
+  color: #1a1a1a;
 }
+.effect[bgcolor-number='4'] {}
+.effect[bgcolor-number='5'] {}
+.effect[bgcolor-number='6'] {}
+.effect[bgcolor-number='7'] {}
+.effect[bgcolor-number='8'] {}
+.effect[bgcolor-number='9'] {}
+.effect[bgcolor-number='10'] {}
+.effect[bgcolor-number='11'] {}
+.effect[bgcolor-number='12'] {}
+.effect[bgcolor-number='13'] {}
+.effect[bgcolor-number='14'] {}
+.effect[bgcolor-number='15'] {}
+
+/* The same hues on the black chip the status bots ask for, lifted to the
+   lightness that background needs. One hue set, two lightness levels. */
+.effect[bgcolor-number='1'][color-number='0'] { color: #e8e8e8; }  /* white */
+.effect[bgcolor-number='1'][color-number='1'] { color: #c1c1c1; }  /* black */
+.effect[bgcolor-number='1'][color-number='2'] { color: #a684e9; }  /* blue */
+.effect[bgcolor-number='1'][color-number='3'] { color: #5ba74a; }  /* green */
+.effect[bgcolor-number='1'][color-number='4'] { color: #fea58e; }  /* red */
+.effect[bgcolor-number='1'][color-number='5'] { color: #ec7258; }  /* maroon */
+.effect[bgcolor-number='1'][color-number='6'] { color: #d174cd; }  /* purple */
+.effect[bgcolor-number='1'][color-number='7'] { color: #fba157; }  /* orange */
+.effect[bgcolor-number='1'][color-number='8'] { color: #d5d05d; }  /* yellow */
+.effect[bgcolor-number='1'][color-number='9'] { color: #82ce6e; }  /* light green */
+.effect[bgcolor-number='1'][color-number='10'] { color: #38a5a5; } /* cyan */
+.effect[bgcolor-number='1'][color-number='11'] { color: #00d0d0; } /* light cyan */
+.effect[bgcolor-number='1'][color-number='12'] { color: #cbadfe; } /* light blue */
+.effect[bgcolor-number='1'][color-number='13'] { color: #fa9af5; } /* pink */
+.effect[bgcolor-number='1'][color-number='14'] { color: #9b9b9b; } /* grey */
+.effect[bgcolor-number='1'][color-number='15'] { color: #d1d1d1; } /* light grey */
